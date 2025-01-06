@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Gradient Background</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        font-family: "Dongle", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .text-container {
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        align-items: flex-end;
+        font-size: 96px;
+        color: white;
+        opacity: 0.8;
+        user-select: none;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+      }
+
+      .inside {
+        position: absolute;
+      }
+
+      .text-1 {
+        top: 15%;
+        font-family: "Dongle", sans-serif;
+        font-weight: 700;
+        font-size: 200px;
+        opacity: 0.6;
+      }
+      .text-siti {
+        position: absolute;
+        top: 0;
+        left: 10%;
+        font-size: 64px;
+        font-weight: bold;
+        color: #ff7f50; /* Sesuaikan warna jika diperlukan */
+        text-shadow: 2px 2px rgba(0, 0, 0, 0.4);
+      }
+
+      .text-anggota {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        font-size: 32px;
+        color: white;
+        text-shadow: 2px 2px rgba(0, 0, 0, 0.4);
+      }
+
+      .info-box {
+        position: absolute;
+        bottom: 5%;
+        /* left: 5%; */
+        right: 5%;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+        color: white;
+        width: 300px;
+      }
+
+      .info-box .box-title {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .info-box .box-content {
+        font-size: 16px;
+        margin-top: 5px;
+      }
+
+      img {
+        max-width: 80%;
+        height: 80vh;
+        opacity: 1;
+      }
+
+      :root {
+        --color-bg1: #000000;
+        --color-bg2: #000000;
+        --color1: 153, 80, 34;
+        --color2: 173, 100, 54;
+        --color3: 193, 120, 74;
+        --color4: 143, 70, 24;
+        --color5: 163, 90, 44;
+        --color-interactive: 183, 110, 64;
+        --circle-size: 80%;
+        --blending: hard-light;
+      }
+
+      @keyframes moveInCircle {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes moveVertical {
+        0% {
+          transform: translateY(-50%);
+        }
+        50% {
+          transform: translateY(50%);
+        }
+        100% {
+          transform: translateY(-50%);
+        }
+      }
+
+      @keyframes moveHorizontal {
+        0% {
+          transform: translateX(-50%) translateY(-10%);
+        }
+        50% {
+          transform: translateX(50%) translateY(10%);
+        }
+        100% {
+          transform: translateX(-50%) translateY(-10%);
+        }
+      }
+
+      .gradient-bg {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+        top: 0;
+        left: 0;
+      }
+
+      .gradients-container {
+        filter: url(#goo) blur(40px);
+        width: 100%;
+        height: 100%;
+      }
+
+      .g1,
+      .g2,
+      .g3,
+      .g4,
+      .g5,
+      .interactive {
+        position: absolute;
+        mix-blend-mode: var(--blending);
+      }
+
+      .g1 {
+        background: radial-gradient(
+            circle at center,
+            rgba(var(--color1), 0.8) 0,
+            rgba(var(--color1), 0) 50%
+          )
+          no-repeat;
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+        animation: moveVertical 30s ease infinite;
+      }
+
+      .g2 {
+        background: radial-gradient(
+            circle at center,
+            rgba(var(--color2), 0.8) 0,
+            rgba(var(--color2), 0) 50%
+          )
+          no-repeat;
+        width: var(--circle-size);
+        height: var(--circle-size);
+        animation: moveInCircle 20s reverse infinite;
+      }
+
+      .g3 {
+        background: radial-gradient(
+            circle at center,
+            rgba(var(--color3), 0.8) 0,
+            rgba(var(--color3), 0) 50%
+          )
+          no-repeat;
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2 + 200px);
+        left: calc(50% - var(--circle-size) / 2 - 500px);
+        animation: moveInCircle 40s linear infinite;
+      }
+
+      .g4 {
+        background: radial-gradient(
+            circle at center,
+            rgba(var(--color4), 0.8) 0,
+            rgba(var(--color4), 0) 50%
+          )
+          no-repeat;
+        width: var(--circle-size);
+        height: var(--circle-size);
+        animation: moveHorizontal 40s ease infinite;
+        opacity: 0.7;
+      }
+
+      .g5 {
+        background: radial-gradient(
+            circle at center,
+            rgba(var(--color5), 0.8) 0,
+            rgba(var(--color5), 0) 50%
+          )
+          no-repeat;
+        width: calc(var(--circle-size) * 2);
+        height: calc(var(--circle-size) * 2);
+        animation: moveInCircle 20s ease infinite;
+      }
+
+      .interactive {
+        background: radial-gradient(
+            circle at center,
+            rgba(var(--color-interactive), 0.8) 0,
+            rgba(var(--color-interactive), 0) 50%
+          )
+          no-repeat;
+        width: 100%;
+        height: 100%;
+        top: -50%;
+        left: -50%;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="container"></div>
+
+      <div class="gradient-bg">
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="10"
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+                result="goo"
+              />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </defs>
+        </svg>
+        <div class="gradients-container">
+          <div class="g1"></div>
+          <div class="g2"></div>
+          <div class="g3"></div>
+          <div class="g4"></div>
+          <div class="g5"></div>
+          <div class="interactive"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const interBubble = document.querySelector(".interactive");
+        let curX = 0,
+          curY = 0,
+          tgX = 0,
+          tgY = 0;
+
+        function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(
+            curX
+          )}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(move);
+        }
+
+        window.addEventListener("mousemove", (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+        });
+
+        move();
+      });
+    </script>
+  </body>
+</html>

@@ -6,6 +6,7 @@
     <title>SITI MUNTAMAH</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <link href="assets/img/favicon.png" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -180,21 +181,21 @@
           <div class="timeline">
             <div class="timeline-item right orange">
               <div class="circle"></div>
-              <div class="content">
+              <div class="content" data-aos="fade-up">
                 <span style="font-size: 20px">2019 - sekarang</span>
                 <p>Anggota DPRD Provinsi Jawa Barat</p>
               </div>
             </div>
             <div class="timeline-item left">
               <div class="circle"></div>
-              <div class="content">
+              <div class="content" data-aos="fade-up">
                 <span style="font-size: 20px">2005 - 2006</span>
                 <p>Manajer PT. Rabbani</p>
               </div>
             </div>
             <div class="timeline-item right orange">
               <div class="circle"></div>
-              <div class="content">
+              <div class="content" data-aos="fade-up">
                 <span style="font-size: 20px">2004 - 2005</span>
                 <p>
                   Konsultan Lembaga Pendidikan Indonesia-Jerman / German Campus
@@ -204,7 +205,7 @@
             </div>
             <div class="timeline-item left">
               <div class="circle"></div>
-              <div class="content">
+              <div class="content" data-aos="fade-up">
                 <span style="font-size: 20px">2004 - 2005</span>
                 <p>Aircraft Design PT. Dirgantara Indonesia</p>
               </div>
@@ -234,12 +235,12 @@
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <button
+              <!-- <button
                 style="background-color: #fd7e14; color: white"
                 class="btn btn-lg"
               >
                 Lihat Semua
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
@@ -251,7 +252,7 @@
         >
           <div class="container">
             <div class="owl-carousel owl-theme">
-              <div class="item">
+              <div class="item" data-aos="fade-up" data-aos-duration="1000">
                 <article>
                   <div class="post-img">
                     <img src="assets/img/blog.png" alt="" class="img-fluid" />
@@ -270,14 +271,33 @@
                   </div>
                 </article>
               </div>
-              <div class="item">
+              <div class="item" data-aos="fade-up" data-aos-duration="1200">
                 <article>
                   <div class="post-img">
                     <img src="assets/img/blog.png" alt="" class="img-fluid" />
                   </div>
                   <p class="post-category">Politics</p>
                   <h2 class="title">
-                    <a href="blog-details.html">Blog 1</a>
+                    <a href="blog-details.html">Blog 2</a>
+                  </h2>
+                  <div class="d-flex align-items-center">
+                    <div class="post-meta">
+                      <p class="post-author">Maria Doe</p>
+                      <p class="post-date">
+                        <time datetime="2024-01-01">Jan 1, 2024</time>
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="item" data-aos="fade-up" data-aos-duration="1400">
+                <article>
+                  <div class="post-img">
+                    <img src="assets/img/blog.png" alt="" class="img-fluid" />
+                  </div>
+                  <p class="post-category">Politics</p>
+                  <h2 class="title">
+                    <a href="blog-details.html">Blog 3</a>
                   </h2>
                   <div class="d-flex align-items-center">
                     <div class="post-meta">
@@ -296,7 +316,7 @@
                   </div>
                   <p class="post-category">Politics</p>
                   <h2 class="title">
-                    <a href="blog-details.html">Blog 1</a>
+                    <a href="blog-details.html">Blog 4</a>
                   </h2>
                   <div class="d-flex align-items-center">
                     <div class="post-meta">
@@ -315,26 +335,7 @@
                   </div>
                   <p class="post-category">Politics</p>
                   <h2 class="title">
-                    <a href="blog-details.html">Blog 1</a>
-                  </h2>
-                  <div class="d-flex align-items-center">
-                    <div class="post-meta">
-                      <p class="post-author">Maria Doe</p>
-                      <p class="post-date">
-                        <time datetime="2024-01-01">Jan 1, 2024</time>
-                      </p>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="item">
-                <article>
-                  <div class="post-img">
-                    <img src="assets/img/blog.png" alt="" class="img-fluid" />
-                  </div>
-                  <p class="post-category">Politics</p>
-                  <h2 class="title">
-                    <a href="blog-details.html">Blog 1</a>
+                    <a href="blog-details.html">Blog 5</a>
                   </h2>
                   <div class="d-flex align-items-center">
                     <div class="post-meta">
@@ -359,7 +360,7 @@
               <span style="color: #fd7e14">Pencapaian</span> Saya</b
             >
           </h2>
-          <p>
+          <p class="mb-12">
             Penasaran dengan prestasi yang telah saya raih dan dampak yang saya
             ciptakan? Yuk, jelajahi bersama!
           </p>
@@ -367,7 +368,11 @@
         <div class="row">
           <!-- Card 1 -->
           <div class="col-md-6 mb-4">
-            <div class="card custom-card">
+            <div
+              class="card custom-card"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
               <img
                 src="assets/img/bg5.png"
                 alt="Gambar Card 1"
@@ -383,7 +388,11 @@
           </div>
           <!-- Card 2 -->
           <div class="col-md-6 mb-4">
-            <div class="card custom-card">
+            <div
+              class="card custom-card"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+            >
               <img
                 src="assets/img/bg6.png"
                 alt="Gambar Card 2"
@@ -420,36 +429,36 @@
           <div class="container">
             <div class="row">
               <!-- Testimonial 1 -->
-              <div class="col-md-6 mb-4">
+              <div
+                class="col-md-6 mb-4"
+                data-aos="fade-right"
+                data-aos-duration="1000"
+              >
                 <div class="testimonial-card">
                   <p class="text">
-                    "Layanan sangat memuaskan, produk berkualitas tinggi. Saya
-                    sangat merekomendasikannya!"
+                    "beliau adalah perempuan yang begitu inovatif, kreatif dan
+                    tekad nya luar biasa dengan semangat yang tinggi, mempunyai
+                    niat bahwa kerja itu untuk ibadah"
                   </p>
                   <img src="assets/img/team/team-1.jpg" alt="Foto Testimoni" />
-                  <div class="name">John Doe</div>
+                  <div class="name">Ina Wiyandini</div>
+                  <div class="text-xs italic font-thin">Owner INA Cookies</div>
                 </div>
               </div>
               <!-- Testimonial 2 -->
-              <div class="col-md-6 mb-4">
+              <div
+                class="col-md-6 mb-4"
+                data-aos="fade-left"
+                data-aos-duration="1000"
+              >
                 <div class="testimonial-card">
                   <p class="text">
                     "Pelayanan pelanggan sangat ramah, saya merasa puas dengan
                     pengalaman saya di sini."
                   </p>
                   <img src="assets/img/team/team-2.jpg" alt="Foto Testimoni" />
-                  <div class="name">Jane Smith</div>
-                </div>
-              </div>
-              <!-- Testimonial 3 -->
-              <div class="col-md-6 mb-4">
-                <div class="testimonial-card">
-                  <p class="text">
-                    "Layanan sangat memuaskan, produk berkualitas tinggi. Saya
-                    sangat merekomendasikannya!"
-                  </p>
-                  <img src="assets/img/team/team-1.jpg" alt="Foto Testimoni" />
                   <div class="name">John Doe</div>
+                  <div class="text-xs italic font-thin">CEO</div>
                 </div>
               </div>
             </div>
@@ -458,7 +467,7 @@
       </section>
       <section id="portfolio" class="portfolio section">
         <!-- Section Title -->
-        <div class="container text-center" data-aos="fade-up">
+        <div class="container text-center mb-20" data-aos="fade-up">
           <h2>
             <b
               >Punya ide menarik? <br /><span style="color: #fd7e14"
@@ -470,27 +479,45 @@
         <br />
         <div class="container">
           <!-- Subscribe Section -->
-          <div class="subscribe-section">
-            <div style="display: flex; align-items: center">
-              <div
-                style="
-                  background-color: #ffece4;
-                  border-radius: 50%;
-                  padding: 10px;
-                "
-              >
-                <i
-                  class="bi bi-envelope"
-                  style="color: #ff7f50; font-size: 1.5rem"
-                ></i>
-              </div>
-              <input
-                type="text"
-                placeholder="Enter Email Address"
-                class="form-control"
-              />
+          <div
+            class="subscribe-section"
+            style="display: flex; align-items: center; gap: 10px"
+          >
+            <div
+              style="
+                background-color: #ffece4;
+                border-radius: 50%;
+                padding: 10px;
+              "
+            >
+              <i
+                class="bi bi-envelope"
+                style="color: #ff7f50; font-size: 1.5rem"
+              ></i>
             </div>
-            <button>Send</button>
+            <input
+              type="text"
+              placeholder="Masukan Keluh Kesah Anda"
+              class="form-control"
+              style="
+                flex: 1;
+                outline: none;
+                box-shadow: none;
+                border: none;
+                padding: 8px;
+              "
+            />
+            <button
+              style="
+                background-color: #ff7f50;
+                color: white;
+                border: none;
+                padding: 8px 24px;
+                border-radius: 60px;
+              "
+            >
+              Send
+            </button>
           </div>
 
           <!-- Features Section -->
